@@ -110,12 +110,10 @@ class DesperateGambitEffect extends PreventionEffectImpl {
             if (super.applies(event, source, game) && event instanceof DamageEvent && event.getAmount() > 0) {
                 if (wonFlip) {
                     event.setAmount(CardUtil.overflowMultiply(event.getAmount(), 2));
-                    this.discard();
                 } else {
                     preventDamageAction(event, source, game);
-                    this.discard();
-                    return true;
                 }
+                this.discard();
             }
         }
         return false;
@@ -161,7 +159,7 @@ class TargetControlledSource extends TargetSource {
                     possibleTargets.add(card.getId());
                 }
                 // 108.4a If anything asks for the controller of a card that doesn't have one (because it's not a permanent or spell), use its owner instead.
-                for (Card card : game.getExile().getAllCards(game)) {
+                for (Card card : game.getExile().getCardsInRange(game, sourceControllerId)) {
                     if (Objects.equals(card.getOwnerId(), sourceControllerId)) {
                         possibleTargets.add(card.getId());
                     }

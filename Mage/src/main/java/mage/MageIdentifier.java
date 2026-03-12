@@ -38,6 +38,8 @@ public enum MageIdentifier {
     CoramTheUndertakerWatcher,
     ThundermanDragonWatcher,
     LockeTreasureHunterWatcher,
+    TheFourthDoctorWatcher,
+    AccessMazeWatcher,
 
     // ----------------------------//
     //       alternate casts       //
@@ -61,8 +63,10 @@ public enum MageIdentifier {
     DemilichAlternateCast,
     DemonicEmbraceAlternateCast,
     FalcoSparaPactweaverAlternateCast,
+    FireLordOzaiAlternateCast,
     HelbruteAlternateCast,
     IntoThePitAlternateCast,
+    LeonardoSewerSamuraiAlternateCast,
     MaestrosAscendencyAlternateCast,
     NashiMoonSagesScionAlternateCast,
     NoctisPrinceOfLucisAlternateCast,
@@ -85,7 +89,10 @@ public enum MageIdentifier {
     WickerfolkIndomitableAlternateCast,
     UriangerAugureltAlternateCast,
     ValgavothTerrorEaterAlternateCast,
-    LightstallInquisitorAlternateCast;
+    LightstallInquisitorAlternateCast,
+    UndeadSprinterAlternateCast,
+    GwenomRemorselessAlternateCast,
+    AlienSymbiosisAlternateCast;
 
     /**
      * Additional text if there is need to differentiate two very similar effects

@@ -25,9 +25,9 @@ public final class RazorPendulum extends CardImpl {
         // At the beginning of each player’s end step, if that player has 5 or less life, Razor Pendulum deals 2 damage to that player.
         this.addAbility(new BeginningOfEndStepTriggeredAbility(
                 TargetController.EACH_PLAYER,
-                new DamageTargetEffect(2, true, "that player"),
+                new DamageTargetEffect(2).withTargetDescription("that player"),
                 false, condition
-        ).withTargetPointerSet(true));
+        ));
     }
 
     private RazorPendulum(final RazorPendulum card) {

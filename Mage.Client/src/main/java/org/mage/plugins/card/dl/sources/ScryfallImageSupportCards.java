@@ -467,6 +467,7 @@ public class ScryfallImageSupportCards {
             // add("MD1"); // Modern Event Deck
             // add("DD3"); // Duel Decks Anthology
             // add("PZ1"); // Legendary Cube
+            add("PLG20"); // Love Your LGS 2020
             add("IKO"); // Ikoria: Lair of Behemoths
             add("C20"); // Commander 2020
             add("M21"); // Core Set 2021
@@ -516,11 +517,13 @@ public class ScryfallImageSupportCards {
             add("NCC"); // New Capenna Commander
             add("SLX"); // Universes Within
             add("CLB"); // Commander Legends: Battle for Baldur's Gate
+            add("PLG22"); // Love Your LGS 2022
             add("2X2"); // Double Masters 2022
             add("SCH"); // Store Championships
             add("DMU"); // Dominaria United
             add("DMC"); // Dominaria United Commander
             add("YDMU"); // Alchemy: Dominaria
+            add("PRCQ"); // Regional Championship Qualifiers 2022
             add("40K"); // Warhammer 40,000 Commander
             add("UNF"); // Unfinity
             add("GN3"); // Game Night: Free-for-All
@@ -532,7 +535,7 @@ public class ScryfallImageSupportCards {
             add("SCD"); // Starter Commander Decks
             add("PW23"); // Wizards Play Network 2023
             add("P23"); // Judge Gift Cards 2023
-            add("SLC"); // Secret Lair 30th Anniversary Countdown Kit
+            add("SLC"); // Secret Lair Countdown
             add("DMR"); // Dominaria Remastered
             add("ONE"); // Phyrexia: All Will Be One
             add("ONC"); // Phyrexia: All Will Be One Commander
@@ -548,9 +551,11 @@ public class ScryfallImageSupportCards {
             add("30A"); // 30th Anniversary Edition
             add("P30A"); // 30th Anniversary Play Promos
             add("P30M"); // 30th Anniversary Misc Promos
+            add("P30H"); // 30th Anniversary History Promos
             add("PEWK"); // Eternal Weekend
             add("LTR"); // The Lord of the Rings: Tales of Middle-Earth
             add("LTC"); // Tales of Middle-Earth Commander
+            add("PF23"); // MagicFest 2023
             add("CMM"); // Commander Masters
             add("WHO"); // Doctor Who
             add("WOE"); // Wilds of Eldraine
@@ -561,10 +566,13 @@ public class ScryfallImageSupportCards {
             add("REX"); // Jurassic World Collection
             add("SPG"); // Special Guests
             add("PW24"); // Wizards Play Network 2024
+            add("PF24"); // MagicFest 2024
             add("RVR"); // Ravnica Remastered
+            add("PL24"); // Year of the Dragon 2024
             add("PIP"); // Fallout
             add("MKM"); // Murders at Karlov Manor
             add("MKC"); // Murders at Karlov Manor Commander
+            add("PSS4"); // MKM Standard Showdown
             add("CLU"); // Ravnica: Clue Edition
             add("OTJ"); // Outlaws of Thunder Junction
             add("OTC"); // Outlaws of Thunder Junction Commander
@@ -576,6 +584,7 @@ public class ScryfallImageSupportCards {
             add("ACR"); // Assassin's Creed
             add("BLB"); // Bloomburrow
             add("BLC"); // Bloomburrow Commander
+            add("PLG24"); // Love Your LGS 2024
             add("PCBB"); // Cowboy Bebop
             add("MB2"); // Mystery Booster 2
             add("DSK"); // Duskmourn: House of Horror
@@ -587,6 +596,7 @@ public class ScryfallImageSupportCards {
             add("PSPL"); // Spotlight Series
             add("INR"); // Innistrad Remastered
             add("PF25"); // MagicFest 2025
+            add("PL25"); // Year of the Snake 2025
             add("DFT"); // Aetherdrift
             add("DRC"); // Aetherdrift Commander
             add("PLG25"); // Love Your LGS 2025
@@ -601,8 +611,21 @@ public class ScryfallImageSupportCards {
             add("EOS"); // Edge of Eternities: Stellar Sights
             add("SPM"); // Marvel's Spider-Man
             add("SPE"); // Marvel's Spider-Man Eternal
+            add("LMAR"); // Marvel Legends Series Inserts
+            add("MAR"); // Marvel Universe
             add("TLA"); // Avatar: The Last Airbender
             add("TLE"); // Avatar: The Last Airbender Eternal
+            add("PF26"); // MagicFest 2026
+            add("PW26"); // Wizards Play Network 2026
+            add("ECL"); // Lorwyn Eclipsed
+            add("ECC"); // Lorwyn Eclipsed Commander
+            add("PL26"); // Year of the Horse 2026
+            add("TMT"); // Teenage Mutant Ninja Turtles
+            add("TMC"); // Teenage Mutant Ninja Turtles Eternal
+            add("PZA"); // Teenage Mutant Ninja Turtles Source Material
+            add("SOS"); // Secrets of Strixhaven
+            add("MSH"); // Marvel Super Heroes
+            add("MSC"); // Marvel Super Heroes Commander
 
             // Custom sets using Scryfall images - must provide a direct link for each card in directDownloadLinks
             add("CALC"); // Custom Alchemized versions of existing cards
@@ -703,6 +726,7 @@ public class ScryfallImageSupportCards {
             put("SLD/Sol Ring/1512b", "https://api.scryfall.com/cards/sld/1512/en?format=image&face=back");
             put("SLD/Steely Resolve/1326b", "https://api.scryfall.com/cards/sld/1326/en?format=image&face=back");
             put("SLD/Stitch in Time/382b", "https://api.scryfall.com/cards/sld/382/en?format=image&face=back");
+            put("SLD/Teferi's Ageless Insight/2214b", "https://api.scryfall.com/cards/sld/2214/en?format=image&face=back");
             put("SLD/Terror/750b", "https://api.scryfall.com/cards/sld/750/en?format=image&face=back");
             put("SLD/Tuvasa the Sunlit/1328b", "https://api.scryfall.com/cards/sld/1328/en?format=image&face=back");
             put("SLD/Ulamog, the Ceaseless Hunger/1122b", "https://api.scryfall.com/cards/sld/1122/en?format=image&face=back");
@@ -725,7 +749,7 @@ public class ScryfallImageSupportCards {
             // LTR - 0 number for tokens only
             // Scryfall has a bug, for some reason this link doesn't work with ?format=image even though it works with ?format=json
             // and ?format=text. Base url fails because language is qya and not en and alternate url fails because of this bug
-            // TODO: This should be reverted when Scryfall fixes the bug 
+            // TODO: This should be reverted when Scryfall fixes the bug
             // put("LTR/The One Ring/001", "https://api.scryfall.com/cards/ltr/0/");
             put("LTR/The One Ring/001", "https://api.scryfall.com/cards/ltr/0/qya?format=image");
 
@@ -744,6 +768,13 @@ public class ScryfallImageSupportCards {
             put("TDM/Marang River Regent/378b", "https://api.scryfall.com/cards/tdm/378/en?format=image&face=back");
             put("TDM/Scavenger Regent/379b", "https://api.scryfall.com/cards/tdm/379/en?format=image&face=back");
             put("TDM/Ugin, Eye of the Storms/382b", "https://api.scryfall.com/cards/tdm/382/en?format=image&face=back");
+
+            // ECL - double faced lands
+            put("ECL/Blood Crypt/349b", "https://api.scryfall.com/cards/ecl/349/en?format=image&face=back");
+            put("ECL/Hallowed Fountain/347b", "https://api.scryfall.com/cards/ecl/347/en?format=image&face=back");
+            put("ECL/Overgrown Tomb/350b", "https://api.scryfall.com/cards/ecl/350/en?format=image&face=back");
+            put("ECL/Steam Vents/348b", "https://api.scryfall.com/cards/ecl/348/en?format=image&face=back");
+            put("ECL/Temple Garden/351b", "https://api.scryfall.com/cards/ecl/351/en?format=image&face=back");
 
         }
     };

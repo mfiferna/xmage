@@ -8,9 +8,8 @@ import mage.abilities.effects.common.CopyTargetStackObjectEffect;
 import mage.cards.CardImpl;
 import mage.cards.CardSetInfo;
 import mage.constants.CardType;
-import mage.constants.TargetController;
-import mage.filter.FilterStackObject;
-import mage.target.common.TargetTriggeredAbility;
+import mage.filter.StaticFilters;
+import mage.target.TargetStackObject;
 
 import java.util.UUID;
 
@@ -19,19 +18,13 @@ import java.util.UUID;
  */
 public final class StrionicResonator extends CardImpl {
 
-    private static final FilterStackObject filter = new FilterStackObject("triggered ability you control");
-
-    static {
-        filter.add(TargetController.YOU.getControllerPredicate());
-    }
-
     public StrionicResonator(UUID ownerId, CardSetInfo setInfo) {
         super(ownerId, setInfo, new CardType[]{CardType.ARTIFACT}, "{2}");
 
         // {2}, {T}: Copy target triggered ability you control. You may choose new targets for the copy.
         Ability ability = new SimpleActivatedAbility(new CopyTargetStackObjectEffect(), new ManaCostsImpl<>("{2}"));
         ability.addCost(new TapSourceCost());
-        ability.addTarget(new TargetTriggeredAbility(filter));
+        ability.addTarget(new TargetStackObject(StaticFilters.FILTER_CONTROLLED_TRIGGERED_ABILITY));
         this.addAbility(ability);
     }
 

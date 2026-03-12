@@ -107,7 +107,7 @@ class EverythingIsColorlessEffect extends ContinuousEffectImpl {
             }
 
             // exile
-            affectedCards.addAll(game.getExile().getAllCardsByRange(game, controller.getId()));
+            affectedCards.addAll(game.getExile().getCardsInRange(game, controller.getId()));
 
 
             for (UUID playerId : game.getState().getPlayersInRange(controller.getId(), game)) {
@@ -134,10 +134,10 @@ class EverythingIsColorlessEffect extends ContinuousEffectImpl {
             affectedCards.forEach(card -> {
                 game.getState().getCreateMageObjectAttribute(card, game).getColor().setColor(colorless);
 
-                // mdf cards
-                if (card instanceof ModalDoubleFacedCard) {
-                    ModalDoubleFacedCardHalf leftHalfCard = ((ModalDoubleFacedCard) card).getLeftHalfCard();
-                    ModalDoubleFacedCardHalf rightHalfCard = ((ModalDoubleFacedCard) card).getRightHalfCard();
+                // df cards
+                if (card instanceof DoubleFacedCard) {
+                    DoubleFacedCardHalf leftHalfCard = ((DoubleFacedCard) card).getLeftHalfCard();
+                    DoubleFacedCardHalf rightHalfCard = ((DoubleFacedCard) card).getRightHalfCard();
                     game.getState().getCreateMageObjectAttribute(leftHalfCard, game).getColor().setColor(colorless);
                     game.getState().getCreateMageObjectAttribute(rightHalfCard, game).getColor().setColor(colorless);
                 }
@@ -148,11 +148,6 @@ class EverythingIsColorlessEffect extends ContinuousEffectImpl {
                     SplitCardHalf rightHalfCard = ((SplitCard) card).getRightHalfCard();
                     game.getState().getCreateMageObjectAttribute(leftHalfCard, game).getColor().setColor(colorless);
                     game.getState().getCreateMageObjectAttribute(rightHalfCard, game).getColor().setColor(colorless);
-                }
-
-                // double faces cards
-                if (card.getSecondCardFace() != null) {
-                    game.getState().getCreateMageObjectAttribute(card, game).getColor().setColor(colorless);
                 }
             });
             return true;

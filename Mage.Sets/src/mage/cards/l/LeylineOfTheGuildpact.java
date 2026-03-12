@@ -30,7 +30,7 @@ public final class LeylineOfTheGuildpact extends CardImpl {
         this.addAbility(new SimpleStaticAbility(new LeylineOfTheGuildpactEffect()));
 
         // Lands you control are every basic land type in addition to their other types.
-        this.addAbility(new SimpleStaticAbility(new BecomesAllBasicsControlledEffect()));
+        this.addAbility(new SimpleStaticAbility(new BecomesAllBasicsControlledEffect(Duration.WhileOnBattlefield)));
     }
 
     private LeylineOfTheGuildpact(final LeylineOfTheGuildpact card) {
@@ -50,6 +50,7 @@ class LeylineOfTheGuildpactEffect extends ContinuousEffectImpl {
     LeylineOfTheGuildpactEffect() {
         super(Duration.WhileOnBattlefield, Layer.ColorChangingEffects_5, SubLayer.NA, Outcome.Benefit);
         staticText = "each nonland permanent you control is all colors";
+        dependendToTypes.add(DependencyType.BecomeNonbasicLand);
     }
 
     private LeylineOfTheGuildpactEffect(final LeylineOfTheGuildpactEffect effect) {

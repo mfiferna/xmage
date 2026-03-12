@@ -147,7 +147,7 @@ public class ManifestTest extends CardTestPlayerBase {
         runCode("after blink", 1, PhaseStep.PRECOMBAT_MAIN, playerA, (info, player, game) -> {
             if (cardAfterBlink == null) {
                 Assert.assertEquals("after blink card must keep in exile",
-                        1, currentGame.getExile().getAllCardsByRange(currentGame, playerA.getId()).size());
+                        1, currentGame.getExile().getCardsInRange(currentGame, playerA.getId()).size());
             } else {
                 String realPermanentName = currentGame.getBattlefield().getAllPermanents()
                         .stream()
@@ -723,6 +723,26 @@ public class ManifestTest extends CardTestPlayerBase {
         assertExileCount(playerB, "Lightning Bolt", 1);
 
         assertHandCount(playerB, "Mountain", 1);
+
+    }
+
+    @Test
+    public void test_ManifestNonPermanentWithCounters() {
+
+        addCard(Zone.BATTLEFIELD, playerA, "Mountain", 5);
+        addCard(Zone.HAND, playerA, "Fierce Invocation");
+        // Manifest the top card of your library, then put two +1/+1 counters on it.
+
+        addCard(Zone.LIBRARY, playerA, "Lightning Bolt", 1);
+        skipInitShuffling();
+
+        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, "Fierce Invocation");
+
+        setStrictChooseMode(true);
+        setStopAt(1, PhaseStep.END_TURN);
+        execute();
+
+        assertPowerToughness(playerA, EmptyNames.FACE_DOWN_CREATURE.getTestCommand(), 4, 4);
 
     }
 

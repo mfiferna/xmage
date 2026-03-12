@@ -747,7 +747,7 @@ public class TokenImagesTest extends CardTestPlayerBase {
         execute();
 
         assertPermanentCount(playerA, EmptyNames.FACE_DOWN_CREATURE.getTestCommand(), faceDownAmount);
-        assert_FaceDownMorphImageNumber(Arrays.asList(1, 2, 3));
+        assert_FaceDownMorphImageNumber(Arrays.asList(1, 2));
     }
 
     @Test // it's ok for fail in very rare random
@@ -766,7 +766,7 @@ public class TokenImagesTest extends CardTestPlayerBase {
         execute();
 
         assertPermanentCount(playerA, EmptyNames.FACE_DOWN_CREATURE.getTestCommand(), faceDownAmount);
-        assert_FaceDownMorphImageNumber(Arrays.asList(1, 2, 3));
+        assert_FaceDownMorphImageNumber(Arrays.asList(1, 2));
     }
 
     @Test
@@ -888,7 +888,7 @@ public class TokenImagesTest extends CardTestPlayerBase {
 
         // check face down card in exile
         runCode("on face down", 1, PhaseStep.PRECOMBAT_MAIN, playerA, (info, player, game) -> {
-            Card card = currentGame.getExile().getAllCards(currentGame, playerA.getId()).get(0);
+            Card card = currentGame.getExile().getCardsOwned(currentGame, playerA.getId()).get(0);
             GameView gameView = getGameView(playerA);
             CardView controllerCardView = gameView.getExile()
                     .stream()
@@ -941,7 +941,7 @@ public class TokenImagesTest extends CardTestPlayerBase {
 
         // check face down card
         runCode("on face down", 1, PhaseStep.PRECOMBAT_MAIN, playerA, (info, player, game) -> {
-            Card card = currentGame.getExile().getAllCards(currentGame, playerA.getId()).get(0);
+            Card card = currentGame.getExile().getCardsOwned(currentGame, playerA.getId()).get(0);
             GameView gameView = getGameView(playerA);
             CardView controllerCardView = gameView.getExile()
                     .stream()

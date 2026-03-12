@@ -20,7 +20,7 @@ public final class EdgeOfEternities extends ExpansionSet {
         this.blockName = "Edge of Eternities"; // for sorting in GUI
         this.hasBasicLands = true;
 
-        this.enablePlayBooster(Integer.MAX_VALUE);
+        this.enablePlayBooster(316);
         this.rotationSet = true;
 
         cards.add(new SetCardInfo("Adagia, Windswept Bastion", 250, Rarity.MYTHIC, mage.cards.a.AdagiaWindsweptBastion.class, NON_FULL_USE_VARIOUS));
@@ -312,7 +312,7 @@ public final class EdgeOfEternities extends ExpansionSet {
         cards.add(new SetCardInfo("Sledge-Class Seedship", 346, Rarity.RARE, mage.cards.s.SledgeClassSeedship.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Sothera, the Supervoid", 115, Rarity.MYTHIC, mage.cards.s.SotheraTheSupervoid.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Sothera, the Supervoid", 360, Rarity.MYTHIC, mage.cards.s.SotheraTheSupervoid.class, NON_FULL_USE_VARIOUS));
-        cards.add(new SetCardInfo("Sothera, the Supervoid", 382, Rarity.MYTHIC, mage.cards.s.SotheraTheSupervoid.class, NON_FULL_USE_VARIOUS));
+        cards.add(new SetCardInfo("Sothera, the Supervoid", 382, Rarity.MYTHIC, mage.cards.s.SotheraTheSupervoid.class, FULL_ART_USE_VARIOUS));
         cards.add(new SetCardInfo("Sothera, the Supervoid", 386, Rarity.MYTHIC, mage.cards.s.SotheraTheSupervoid.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Space-Time Anomaly", 229, Rarity.RARE, mage.cards.s.SpaceTimeAnomaly.class, NON_FULL_USE_VARIOUS));
         cards.add(new SetCardInfo("Space-Time Anomaly", 315, Rarity.RARE, mage.cards.s.SpaceTimeAnomaly.class, NON_FULL_USE_VARIOUS));
